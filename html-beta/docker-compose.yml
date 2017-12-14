@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    build: .
+    image: bonfy/html-beta:latest
+    # development overide the html file
+    volumes:
+    - ./src:/usr/share/nginx/html
+    ports:
+    - "8888:80"
