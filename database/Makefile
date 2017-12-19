@@ -12,6 +12,12 @@ down-redis:
 	docker container stop bonfy-redis
 	docker container rm bonfy-redis
 
+rabbitmq:
+	docker run -d --hostname bonfy-rabbit --name bonfy-rabbit -e RABBITMQ_DEFAULT_USER=root -e RABBITMQ_DEFAULT_PASS=abc123 rabbitmq:3-management
+
+down-rabbitmq:
+	docker container stop bonfy-rabbit
+	docker container rm bonfy-rabbit
 
 # 补充
 
