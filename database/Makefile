@@ -19,6 +19,12 @@ down-rabbitmq:
 	docker container stop bonfy-rabbit
 	docker container rm bonfy-rabbit
 
+postgres:
+	docker run --name bonfy-postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres
+
+down-postgres:
+	docker container stop bonfy-postgres
+	docker container rm bonfy-postgres
 # 补充
 
 # docker run -it --link bonfy-redis:redis --rm redis redis-cli -h redis -p 6379
