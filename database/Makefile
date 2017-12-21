@@ -20,7 +20,7 @@ down-rabbitmq:
 	docker container rm bonfy-rabbit
 
 postgres:
-	docker run --name bonfy-postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres
+	docker run --name bonfy-postgres -v /tmp/volumes/postgres:/var/lib/postgresql/data -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres
 
 down-postgres:
 	docker container stop bonfy-postgres
