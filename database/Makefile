@@ -25,6 +25,6 @@ postgres:
 down-postgres:
 	docker container stop bonfy-postgres
 	docker container rm bonfy-postgres
-# 补充
 
+# 补充
 # docker run -it --link bonfy-redis:redis --rm redis redis-cli -h redis -p 6379
