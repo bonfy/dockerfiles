@@ -26,5 +26,15 @@ down-postgres:
 	docker container stop bonfy-postgres
 	docker container rm bonfy-postgres
 
+mongo:
+	docker run --name bonfy-mongo -v /data/volumes/mongo:/data/db -d mongo --auth
+
+# Auth Set:
+# https://github.com/docker-library/docs/blob/master/mongo/README.md
+
+down-mongo:
+	docker container stop bonfy-mongo
+	docker container rm bonfy-mongo
+
 # 补充
 # docker run -it --link bonfy-redis:redis --rm redis redis-cli -h redis -p 6379
